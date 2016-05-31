@@ -1,0 +1,504 @@
+.obr_small {
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    background: url(images/picture_provizorium_small.png) no-repeat;
+}
+
+.obr_large {
+    height: 100px;
+    width: 200px;
+    margin: auto;
+
+    background: url(images/picture_provizorium_large.png) no-repeat;
+}
+
+.obr_medium {
+    height: 75px;
+    width: 100px;
+    margin: auto;
+
+    background: url(images/picture_provizorium_medium.png) no-repeat;
+}
+
+.padding_top {
+    padding-top: 10px;
+}
+
+.bottom_page {
+    margin-bottom: 200px;
+}
+
+
+.menu_view {
+    width: 330px;
+    height: 330px;
+    background: url(images/menu_view.png) no-repeat;
+    margin: auto;
+}
+
+.menu_item_name {
+    font-size: 18px;
+    color: black;
+    margin-right: 20px;
+}
+
+.padding_bottom_big {
+    padding-bottom: 30px;
+}
+
+.resume_big {
+    height: 95px;
+    width: 195px;
+    margin: auto;
+    margin-top: 10px;
+    background: url(images/resume_big.png) no-repeat;
+}
+
+.resume_med {
+    height: 105px;
+    width: 140px;
+    margin: auto;
+    margin-top: 10px;
+    background: url(images/resume_med.png) no-repeat;
+}
+
+.resume_small {
+    height: 65px;
+    width: 70px;
+    margin: auto;
+    background: url(images/resume_small.png) no-repeat;
+}
+
+.resume_name {
+    font-size: 18px;
+}
+
+.resume_mid_col {
+    margin: auto;
+}
+
+.padding-top
+{
+    padding-top: 15px;
+}
+
+.org
+{
+    color: #f57c00 !important;
+}
+
+input[type=text]:focus, textarea.materialize-textarea:focus:not([readonly])
+{
+        border-bottom: 1px solid #f57c00 !important;
+    box-shadow: 0 1px 0 0 #f57c00 !important;
+}
+
+input[type=text].valid
+{
+     
+        border-bottom: 1px solid #e65100  !important;
+    box-shadow: 0 1px 0 0 #e65100  !important;
+}
+
+input[type=tpassword]:focus, textarea.materialize-textarea:focus:not([readonly])
+{
+        border-bottom: 1px solid #f57c00 !important;
+    box-shadow: 0 1px 0 0 #f57c00 !important;
+}
+
+input[type=password].valid
+{
+     
+        border-bottom: 1px solid #e65100  !important;
+    box-shadow: 0 1px 0 0 #e65100  !important;
+}
+
+input[type=text]:focus:not([readonly]) + label
+{
+    color: #f57c00!important;
+}
+
+
+input[type="radio"].with-gap:checked + label:after
+{
+    border: 2px solid #f57c00 !important;
+    background-color: #f57c00 !important;
+}
+
+input[type="radio"].with-gap:checked + label:before {
+    border-radius: 50%;
+    border: 2px solid #f57c00 !important;
+}
+.picker__date-display
+{
+    background-color: #f57c00 !important;
+}
+
+.picker__weekday-display
+{
+    background-color: #ef6c00 !important;
+}
+
+.picker__close, .picker__today
+{
+    color: #f57c00 !important;
+}
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected
+{
+    background-color: #f57c00 !important;
+}
+
+.picker__day.picker__day--today 
+{
+    color: #f57c00 !important;
+}
+
+.picker__day.picker__day--today.picker__day--selected {
+    color: #fff !important;
+}
+
+.btn, .btn-large
+{
+     background-color: #f57c00 !important;
+}
+
+label
+{
+    color: black !important;
+}
+
+.hid-cont
+{
+    display: none; 
+}
+.pointer
+{
+    cursor: pointer;
+}
+
+
+.switch label input[type=checkbox]:checked + .lever
+{
+    background-color: #ffb74d !important;
+}
+.switch label input[type=checkbox]:checked+.lever:after
+{
+    background-color: #f57c00 !important;
+}
+
+input[type="radio"]:checked + label:after
+{
+        border: 2px solid #f57c00;
+       background-color: #f57c00;
+}
+.overflow
+{
+    overflow: visible !important;
+}
+
+.dropdown-content li>a, .dropdown-content li>span
+{
+    color: #f57c00 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+$level-btn_size: 30px;
+$cell_size: 100px;
+
+#reservation-wrapper{     
+    
+    // -- TOOLTIPS BASE --
+    .tooltiptext {
+        visibility: hidden;
+        width: auto;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        overflow: visible;
+        padding: 5px;
+
+        /* Position the tooltip */
+        position: absolute;
+        margin-top: 100px;
+        z-index: 1;
+    }
+    // -- //TOOLTIPS BASE --
+    
+    
+    
+    // -- CELL ROWS & CELLS --
+    .cell-row {
+        clear: both;
+        
+        .cell {
+            border: 1px solid black;
+            width: $cell_size;
+            height: $cell_size;
+            float: left;            
+            
+            &.cell-empty {
+                background: white;
+            }            
+            
+            &.cell-wall {
+                background: grey;
+            }            
+            
+            &.cell-table {
+                background: brown;
+                &.table-free {
+                    background: green;
+                    cursor: pointer;
+                }
+                &.table-taken {
+                    background: red;
+                }
+                &.table-selected {
+                    background: blue;
+                }
+                &.table-highlighted {
+                    background: yellow;
+                }
+                .table-number {
+                    font-size: 35px;
+                }
+                // tooltips
+                &:hover .tooltiptext {
+                    visibility: visible;
+                }
+                
+                .tooltiptext::after {
+                    content: " ";
+                    position: absolute;
+                    bottom: 100%;  /* At the top of the tooltip */
+                    left: $cell_size/2;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: transparent transparent black transparent;
+                }
+                // //tooltips
+            }
+            
+            &.cell-active{
+                border-width: thick; 
+            }
+        }
+    }    
+    // -- //CELL ROWS & CELLS --
+
+
+
+
+    // -- CELL TABLE ("CANVAS") --
+    #table-wrapper
+    {
+        float: left;
+    }
+    // -- //CELL TABLE ("CANVAS") --
+    
+    
+    
+    
+    // -- CELL TYPE LEGEND --
+    #select-panel
+    {
+        float: left;
+        margin-left: 100px;
+        
+        .table-free {
+            cursor: default;
+        }        
+
+        .cell-desc
+        {
+            color: black;
+            float: left;
+            font-size: 16px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }  
+    }  
+    // -- //CELL TYPE LEGEND --
+    
+    
+    
+    
+    // -- ADMIN MODE --
+    &.mode-admin
+    {
+        #select-panel, #table-wrapper {
+            .cell:not(.cell-active)
+            {
+                cursor: pointer;
+            }
+            
+        }
+        
+    }
+    // -- //ADMIN MODE --
+    
+    
+    
+    
+    // -- FLOOR NAVIGATION --
+    #level-select
+    {
+        float: left;
+        margin-left: 20px;
+        margin-right: 30px;
+        margin-top: 25px;
+        .level
+        {
+            width: 50px;
+            height: 50px;
+            
+            .level-btn
+            {
+                text-align: center;
+                width: $level-btn_size;
+                height: $level-btn_size;
+                display: block;
+                background: blue;
+                border-radius: $level-btn_size/2;
+                color: white;
+                cursor: pointer;
+                padding-top: 5px;
+                float: left;
+                
+                &.active
+                {
+                    background: yellow;
+                    color: black;
+                }
+            }
+            .delete-level
+            {
+                float: left;
+                color: red;
+                font-weight: 800;
+                margin-left: 10px;
+                margin-top: 5px;
+                cursor: pointer;
+            }
+        }
+        .add-level
+        {
+            width: 50px;
+            height: 50px;
+            
+            .add-level-btn
+            {
+                text-align: center;
+                width: $level-btn_size;
+                height: $level-btn_size;
+                display: block;
+                background: green;
+                border-radius: $level-btn_size/2;
+                color: white;
+                cursor: pointer;
+                padding-top: 5px;
+                float: left;
+            }
+        }
+    }
+    // -- //FLOOR NAVIGATION --
+    
+    
+    
+    
+    // -- TABLE INFO --
+    #table-info-wrapper
+    {
+        clear: both;
+        margin-left: 100px;
+        padding-top: 20px;
+        
+        #table-info-header
+        {
+            color: black;
+            font-size: 25px;
+            text-align: center;
+            width: 300px;
+            height: 50px;
+            border: 1px solid black; 
+        }
+        
+        .table-info-cont
+        {
+            width: 300px;
+            height: 300px;
+            
+            .table-id
+            {
+                width: 150px;
+                height: auto;
+                float: left;
+                border: 1px solid black;
+                
+                .table-id-header
+                {
+                    text-align: center;
+                    font-size: 20px;
+                }
+                .table-id-row
+                {
+                    border: 1px solid black;
+                    .table-info-input
+                    {
+                        width: 100px;
+                        margin-left: 25px;
+                    }
+                    &.highlighted
+                    {
+                        background: yellow;
+                    }
+                }
+            }
+            
+            .table-capacity
+            {
+                width: 150px;
+                height: auto;
+                float: left;
+                border: 1px solid black;
+                
+                .table-capacity-header
+                {
+                    text-align: center;
+                    font-size: 20px;
+                }
+                .table-capacity-row
+                {
+                    border: 1px solid black;
+                    
+                    .table-info-input
+                    {
+                        width: 100px;
+                        margin-left: 25px;
+                    }
+                    &.highlighted
+                    {
+                        background: yellow;
+                    }
+                }                
+            }
+        }
+    }
+    // -- TABLE INFO --
+    
+}

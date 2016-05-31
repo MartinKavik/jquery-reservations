@@ -1,0 +1,304 @@
+$level-btn_size: 30px;
+$cell_size: 30px;
+
+#reservation-wrapper{     
+    font-size: 18px;
+    
+    // -- TOOLTIPS BASE --
+    .tooltiptext {
+        visibility: hidden;
+        width: auto;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        overflow: visible;
+        padding: 5px;
+
+        /* Position the tooltip */
+        position: absolute;
+        //margin-top: 10px;
+        z-index: 1;
+    }
+    // -- //TOOLTIPS BASE --
+    
+    
+    
+    // -- CELL ROWS & CELLS --
+    .cell-row {
+        clear: both;
+        
+        .cell {            
+            width: $cell_size;
+            height: $cell_size;
+            float: left;            
+            
+            &.cell-empty {
+                background: white;
+            }            
+            
+            &.cell-wall {
+                background: grey;
+            }            
+            
+            &.cell-table {
+                background: brown;
+                &.table-free {
+                    background: green;
+                    cursor: pointer;
+                }
+                &.table-taken {
+                    background: red;
+                }
+                &.table-selected {
+                    background: blue;
+                }
+                &.table-highlighted {
+                    background: yellow;
+                }
+                .table-number {
+                    font-size: 23px;
+                    display: block;
+                    padding-top: 2px;
+                    text-align: center;
+                    height: 100%;
+                }                
+                
+                .tooltiptext::after {
+                    content: " ";
+                    position: absolute;
+                    bottom: 100%;  /* At the top of the tooltip */
+                    left: $cell_size/2;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: transparent transparent black transparent;
+                }
+                // //tooltips
+            }
+            
+            &.cell-active{
+                border-width: thick; 
+            }
+        }
+    }    
+    // -- //CELL ROWS & CELLS --
+
+
+
+
+    // -- CELL TABLE ("CANVAS") --
+    #table-wrapper
+    {
+        float: left;
+    }
+    // -- //CELL TABLE ("CANVAS") --
+    
+    
+    
+    
+    // -- CELL TYPE LEGEND --
+    #select-panel
+    {
+        float: left;
+        margin-left: 100px;
+        
+        .table-free {
+            cursor: default;
+        }        
+
+        .cell-desc
+        {
+            color: black;
+            float: left;
+            font-size: 16px;
+            margin-left: 10px;
+            margin-top: 5px;
+        }  
+    }  
+    // -- //CELL TYPE LEGEND --
+    
+
+
+
+    // -- VIEW MODE --
+    &.mode-view {
+        // tooltips
+        .cell:hover .tooltiptext {
+            visibility: visible;
+        }
+    }
+    // -- //VIEW MODE --
+
+    // -- ADMIN MODE --
+    &.mode-admin
+    {
+        #select-panel, #table-wrapper {
+            .cell
+            {
+                border: 1px solid black;                
+                &:not(.cell-active)
+                {
+                    cursor: pointer;
+                }    
+            }        
+        }        
+    }
+    // -- //ADMIN MODE --
+    
+    
+    
+    
+    // -- FLOOR NAVIGATION --
+    #level-select
+    {
+        float: left;
+        margin-left: 20px;
+        margin-right: 30px;
+        margin-top: 25px;
+        .level
+        {
+            width: 50px;
+            height: 50px;
+            
+            .level-btn
+            {
+                text-align: center;
+                width: $level-btn_size;
+                height: $level-btn_size;
+                display: block;
+                background: blue;
+                border-radius: $level-btn_size/2;
+                color: white;
+                cursor: pointer;
+                padding-top: 5px;
+                float: left;
+                
+                &.active
+                {
+                    background: yellow;
+                    color: black;
+                }
+            }
+            .delete-level
+            {
+                float: left;
+                color: red;
+                font-weight: 800;
+                margin-left: 5px;
+                margin-top: 3px;
+                cursor: pointer;
+            }
+        }
+        .add-level
+        {
+            width: 50px;
+            height: 50px;
+            
+            .add-level-btn
+            {
+                text-align: center;
+                width: $level-btn_size;
+                height: $level-btn_size;
+                display: block;
+                background: green;
+                border-radius: $level-btn_size/2;
+                color: white;
+                cursor: pointer;
+                padding-top: 5px;
+                float: left;
+            }
+        }
+    }
+    // -- //FLOOR NAVIGATION --
+    
+    
+    
+    
+    // -- TABLE INFO --
+    #table-info-wrapper
+    {
+        float: left;
+        margin-top: 60px;
+        margin-left: 30px;
+        
+        #table-info-header
+        {
+            color: black;
+            font-size: 25px;
+            text-align: center;
+            width: 300px;
+            height: 50px;
+            border: 1px solid black; 
+        }
+        
+        .table-info-cont
+        {
+            width: 300px;
+            height: 300px;
+            
+            .table-id
+            {
+                width: 150px;
+                height: auto;
+                float: left;
+                border: 1px solid black;
+                
+                .table-id-header
+                {
+                    text-align: center;
+                    font-size: 20px;
+                }
+                .table-id-row
+                {
+                    border: 1px solid black;
+                    .table-info-input
+                    {
+                        width: 100px;
+                        margin-left: 25px;
+                    }
+                    &.highlighted
+                    {
+                        background: yellow;
+                        .table-info-input {
+                            background: lightyellow;
+                        }
+                    }
+                }
+            }
+            
+            .table-capacity
+            {
+                width: 150px;
+                height: auto;
+                float: left;
+                border: 1px solid black;
+                
+                .table-capacity-header
+                {
+                    text-align: center;
+                    font-size: 20px;
+                }
+                .table-capacity-row
+                {
+                    border: 1px solid black;
+                    
+                    .table-info-input
+                    {
+                        width: 100px;
+                        margin-left: 25px;
+                    }
+                    &.highlighted
+                    {
+                        background: yellow;
+                        .table-info-input {
+                            background: lightyellow;
+                        }
+                    }
+                }                
+            }
+        }
+    }
+    // -- TABLE INFO --
+    
+}

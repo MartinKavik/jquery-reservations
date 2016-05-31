@@ -1,0 +1,20 @@
+// Apply a natural box layout model to all elements
+// but allowing components to change
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+html {
+    box-sizing: border-box;
+    font-family: "Arial";
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+//@import 'reservation'
+
+.cont {
+    float: left;
+
+    &:last-of-type {
+        margin-top: 80px;
+    }
+}
