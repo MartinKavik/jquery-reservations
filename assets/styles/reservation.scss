@@ -78,7 +78,7 @@ $cell_size: 30px;
             }
             
             &.cell-active{
-                border-width: thick; 
+                border-width: thick !important; 
             }
         }
     }    
