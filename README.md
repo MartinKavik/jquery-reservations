@@ -7,16 +7,18 @@ This project is a small experiment with application of [The Elm Architecture](ht
 
 Plugin's [code](app/reservation.js) contains 4 main sections:
 - INIT
- - sets default values of "private" vars (includes merging of user's settings)
-- EVENT HANDLERS
- - processes user inputs and modifies *model* (*model* matches var *floors* in the project)
+ - sets default values of "private" vars (including merge of user's settings)
+- EVENT HANDLERS (= *update*)
+ - processes user inputs and modifies *model*
+   - (*model* matches "private" vars in the project and the most important is var *floors* - it is container for [db.json](db.json) content)
 - VIEW
  - renders the plugin according to the *model*
  - render is started after every *model* change (inspiration: http://elm-lang.org/blog/blazing-fast-html)
    - *main advantage* - it is not necessary to modify *model* and also corresponding part of the DOM in EVENT HANDLERS
     - *main disadvantages* - it is slow without diff algorithm (reservation grid with more than ~30x30 cells has noticeable delays before responses to user actions) and input fields loses focus during rerender
 - API
- - "public" plugin functions (viz *closures* - http://ryanmorr.com/understanding-scope-and-context-in-javascript/)
+ - "public" plugin functions
+   - (public / private vars in JS - viz *closures* - http://ryanmorr.com/understanding-scope-and-context-in-javascript/)
 
 # Technologies / libraries
 - [Webpack boilerplate](https://github.com/cvgellhorn/webpack-boilerplate)
